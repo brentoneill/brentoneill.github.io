@@ -1,0 +1,79 @@
+//Reset styles
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behaviour on widths */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  background: transparent;
+  text-decoration:none;
+  color:inherit;
+  &:visited {
+    color:inherit;
+  }
+  &:hover {
+    color:inherit;
+    text-decoration:none;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+ul{
+  list-style-type:none;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+
+small {
+  font-size: 80%;
+}
+
+img {
+  border: 0;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}

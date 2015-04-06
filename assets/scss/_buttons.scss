@@ -1,0 +1,276 @@
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+////FLAT BUTTONS
+//fb stands for 'flat button'
+.fb {
+  position:relative;
+  font-size:1em;
+  box-sizing:border-box;
+  cursor:pointer;
+  display:inline-block;
+  color:$white;
+  padding:10px;
+  border:0;
+  background-color:transparent;
+  border-radius:6px;
+  transition:all .2s ease;
+  min-width:100px;
+  &:active {
+    outline:none;
+  }
+  &:focus {
+    outline:none;
+  }
+  &:hover {
+    opacity:.8;
+  }
+}
+
+//For a thin button
+.fb-thin {
+  padding:4px;
+  padding-left:6px;
+  padding-right:6px;
+}
+
+//For a full width button
+.fb-fw {
+  width:100%;
+  display:block;
+}
+
+.fb-yes {
+  background-color:$teal;
+  border:thin solid darken($teal, 10%);
+  box-shadow: 3px 3px 0px rgba(darken($teal, 10%), 1);
+  &:active{
+    box-shadow: 1px 1px 0px rgba(darken($teal, 10%), 1);
+    transform:translate(2px, 2px);
+  }
+}
+
+.fb-no {
+  background-color:$red;
+  border:thin solid darken($red, 10%);
+  box-shadow: 3px 3px 0px rgba(darken($red, 10%), 1);
+  &:active{
+    box-shadow: 1px 1px 0px rgba(darken($red, 10%), 1);
+    transform:translate(2px, 2px);
+  }
+}
+
+.fb-maybe {
+  background-color:$yellow;
+  border:thin solid darken($yellow, 10%);
+  box-shadow: 3px 3px 0px rgba(darken($yellow, 10%), 1);
+  &:active{
+    box-shadow: 1px 1px 0px rgba(darken($yellow, 10%), 1);
+    transform:translate(2px, 2px);
+  }
+}
+
+.fb-ok {
+  background-color:$purple;
+  border:thin solid darken($purple, 10%);
+  box-shadow: 3px 3px 0px rgba(darken($purple, 10%), 1);
+  &:active{
+    box-shadow: 1px 1px 0px rgba(darken($purple, 10%), 1);
+    transform:translate(2px, 2px);
+  }
+}
+
+.fb-sure {
+  background-color:$blue;
+  border:thin solid darken($blue, 10%);
+  box-shadow: 3px 3px 0px rgba(darken($blue, 10%), 1);
+  &:active{
+    box-shadow: 1px 1px 0px rgba(darken($blue, 10%), 1);
+    transform:translate(2px, 2px);
+  }
+}
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+//MINIMAL BUTTONS
+////mb stands for 'minimal button'
+.mb {
+  position:relative;
+  font-size:1em;
+  box-sizing:border-box;
+  cursor:pointer;
+  padding:10px;
+  border:thin solid $black;
+  color:$black;
+  border-radius:4px;
+  width:160px;
+  margin:0 auto;
+  margin-bottom:20px;
+  transition: all .3s ease;
+  display:inline-block;
+}
+
+///////////////////
+///////////////////
+//FILL STYLE BUTTONS
+.mb-fill {
+  background-color:transparent;
+  &:before {
+    -webkit-transition: all .3s ease;
+    position:absolute;
+    background-color:$black;
+    content:"";
+    z-index:-1000;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+////UP
+.mb-fill-up {
+  &:before {
+    top:100%;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+  &:hover {
+  color: $white;
+    &::before {
+      top:0;
+    }
+  }
+}
+////DOWN
+.mb-fill-dn {
+  &:before {
+    bottom:100%;
+    top:0;
+    left:0;
+    right:0;
+  }
+  &:hover {
+  color: $white;
+    &::before {
+      bottom:0;
+    }
+  }
+}
+////RIGHT
+.mb-fill-r {
+  &:before {
+    bottom:0;
+    top:0;
+    left:0;
+    right:100%;
+  }
+  &:hover {
+  color: $white;
+    &::before {
+      right:0;
+    }
+  }
+}
+////LEFT
+.mb-fill-l {
+  &:before {
+    bottom:0;
+    top:0;
+    left:100%;
+    right:0;
+  }
+  &:hover {
+  color: $white;
+    &::before {
+      left:0;
+    }
+  }
+}
+//END FILL BUTTONS
+///////////////////
+///////////////////
+
+
+
+
+///////////////////
+///////////////////
+//SLIDE BUTTONS
+.mb-slide {
+  display:inline-block;
+  background-color:transparent;
+  height:60px;
+  font-size:1.618em;
+  font-weight:300;
+
+  &:hover {
+
+  }
+  &:before,
+  &:after {
+    position:absolute;
+    width:100%;
+    height:100%;
+    text-align:center;
+    -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  }
+}
+
+.mb-slide-vert {
+  &:before{
+    left:0;
+    content:"login";
+    top:10px;
+  }
+  &:after{
+    left:0;
+    top:-50%;
+    opacity:0;
+    content:"let's go!";
+  }
+  &:hover {
+    &:before {
+      top:-50%;
+      opacity:0;
+    }
+    &:after{
+      top:10px;
+      opacity:1;
+    }
+  }
+}
+
+.mb-slide-horz {
+  &:before {
+   content:"don't be shy!";
+   left:-50%;
+   opacity: 0;
+ }
+ &:after {
+   content:"let's talk";
+   left:0;
+ }
+ &:hover {
+   &:before {
+     left:0;
+     opacity:1;
+   }
+   &:after {
+     left:-50%;
+     opacity:0;
+   }
+ }
+}
+//END SLIDE BUTTONS
+///////////////////
+///////////////////

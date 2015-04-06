@@ -1,0 +1,205 @@
+//  _______  _______  _______
+// (       )(  ____ \(  ____ \|\     /|
+// | () () || (    \/| (    \/| )   ( |
+// | || || || (__    | (_____ | (___) |
+// | |(_)| ||  __)   (_____  )|  ___  |
+// | |   | || (            ) || (   ) |
+// | )   ( || (____/\/\____) || )   ( |
+// |/     \|(_______/\_______)|/     \|
+////  A RESPONSIVE GRID SYSTEM    /////
+///////////////////////////////////////
+
+
+//FOR TESTING PURPOSES
+/* .module {
+    text-align:center;
+    background-color:  $gray-light;
+    border-radius: 4px;
+    padding-top:20px;
+    padding-bottom:20px;
+} */
+//FOR TESTING PURPOSES
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+////SETTINGS
+$container-max-width: 1024px;
+$container-perc-width: 80%;
+$gutter: 1em;
+$row-gap: $gutter;
+
+$col-count: 12;
+$col-min-height: 40px;
+
+$screen-med    : 1024px;
+$screen-small  : 768px;
+$screen-xsmall : 480px;                //Iphone 3-6+, Galaxy 1-4, Google 4,5,S
+
+$mesh-animated : true;                 //Sets whether or not columns are animated at breakpoints
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+////COMMON ELEMENTS
+.container {
+      width: $container-perc-width;
+  max-width: $container-max-width;
+     margin: 0px auto;
+}
+
+.row {
+   margin-left: -$gutter;
+  margin-right: -$gutter;
+  margin-bottom: $row-gap;
+  &:before,
+  &:after {
+    content: "";      //Clears out the float from the columns
+    display: table;   //Clears out the float from the columns
+      clear: both;    //Clears out the float from the columns
+  }
+}
+
+.row-flush {
+  margin-left:0px;
+  margin-right:0px;
+  margin-bottom: $row-gap;
+  &:before,
+  &:after {
+    content: "";      //Clears out the float from the columns
+    display: table;   //Clears out the float from the columns
+      clear: both;    //Clears out the float from the columns
+  }
+}
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+////COLUMNS
+[class^='col-'] {                      //Selects all elements that are prefixed w/ 'col-'
+       float:  left;
+  min-height:  $col-min-height;
+       width:  8.333333%;
+     padding:  0 $gutter;
+
+}
+
+@if $mesh-animated {
+  [class^='col-'] {
+    transition: all .3s ease;         //Animates on media queries...
+  }
+}
+//////SETS COLUMN WIDTH
+@for $i from 1 through $col-count {
+  .col-#{$i} {
+    width: ( 100 / $col-count ) * $i * 1%;
+  }
+}
+////END COLUMNS
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+////SPECIAL CLASSES -- not affected by responsiveness
+.center{
+  margin:0 auto;
+  margin-bottom:$gutter;
+  float:none;
+}
+
+[class^='fixcol-'] {
+  float:left;
+  padding: 0 $gutter;
+
+}
+
+.fixcol-third {
+  width: (100/3) * 1%;
+}
+
+.fixcol-half {
+  width: 50%;
+}
+
+.fixcol-two-thirds {
+  width: (100/3) * 2%;
+}
+
+.fixcol-quarter {
+  width: (100/4) * 1%;
+}
+.fixcol-three-quarters {
+  width: (100/4) * 3%;
+}
+////END SPECIAL CLASSES
+///////////////////////////////////////
+///////////////////////////////////////
+
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+//RESPONSIVENESS
+@media only screen and (max-width: $screen-med) {
+  //Collapse gutters
+  [class^='col-'],
+  [class^='fixcol-'] {
+    padding: 0 $gutter / 2;
+  }
+  .row {
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+  }
+}
+
+@media only screen and (max-width: $screen-small) {
+  [class^='col-'],
+  [class^='fixcol-'] {
+    margin-bottom:$gutter;
+  }
+  .row {
+    margin-bottom:0;
+  }
+}
+
+@media only screen and (max-width: $screen-xsmall) {
+  [class^='col-'] {
+    width: 100%;
+    margin-bottom:$gutter;
+  }
+  .col-1 {
+    width:50%;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+  [class^='col-'] {
+    padding: 0 $gutter / 4;
+  }
+  .container {
+    width:100%;
+  }
+  .row {
+    margin-left:$gutter / 4;
+    margin-right:$gutter / 4;
+  }
+}
+////END RESPONSIVE
+///////////////////////////////////////
+///////////////////////////////////////

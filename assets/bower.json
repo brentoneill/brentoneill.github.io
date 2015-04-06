@@ -1,0 +1,24 @@
+{
+  "name": "Brent O'Neill's portfolio site",
+  "version": "0.0.0",
+  "authors": [
+    "Brent O'Neill <brentoneill@gmail.com>"
+  ],
+  "description": "Exhibition of work for Brent O'Neill",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "brentocreates.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "slick.js": "~1.5.0",
+    "scrollReveal.js": "~2.2.0",
+    "wow.js": "~1.1.0"
+  }
+}

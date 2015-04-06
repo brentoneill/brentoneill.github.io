@@ -1,0 +1,130 @@
+.nav-toggle-wrapper {
+  position:fixed;
+  top:40px;
+  right:40px;
+  transition:all .3s ease;
+  z-index:100;
+}
+
+.nav-toggle {
+  cursor:pointer;
+  position:relative;
+/*   i.fa-reorder {
+  transition:all .3s ease-in-out;
+  &:hover {
+    color:$teal;
+  }
+} */
+  color:$black;
+  transition:all .3s ease-in-out;
+}
+
+.side-nav {
+  z-index:100;
+  position:fixed;
+  bottom:-1000px;
+  transition:all .3s ease-in-out;
+  border:thin solid $gray-light;
+  border-radius:2px;
+  height:100%;
+  width:100%;
+  background-color:rgba(white, .5);
+  border-right:0;
+  text-align:center;
+  visibility:0;
+  .headshot {
+    height:140px;
+  }
+  h5 {
+    margin-top:-20px;
+    font-size:1em;
+    font-weight:300;
+    margin-bottom:20px;
+    letter-spacing: .6em;
+  }
+  h4 {
+    font-weight:100;
+    margin-top:10px;
+  }
+  ul {
+    margin-bottom:10px;
+    li {
+      position:relative;
+      width:150px;
+      margin:0 auto;
+      a {
+        font-size:2.618em;
+        font-weight:100;
+        transition:all .3s ease-in-out;
+        &:hover {
+          color:$teal;
+        }
+      }
+/*       a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color:$teal;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: all .3s ease-in-out;
+}
+a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+} */
+    }
+  }
+  i.fa-close {
+    position: fixed;
+    top:40px;
+    right:40px;
+    cursor:pointer;
+    transition:all .3s ease-in-out;
+    &:hover {
+      color:$teal;
+    }
+  }
+  a {
+    transition:all .3s ease-in-out;
+    &:hover {
+      color:$teal;
+    }
+  }
+
+}
+
+.sidenav-open {
+  bottom:0px;
+  width:100%;
+  height:100%;
+  visibility: visible;
+}
+
+.hidden {
+  display:none;
+}
+
+.nav-toggle-flush {
+  right:240px;
+}
+
+.page-content {
+  transition: all .3s ease-in-out;
+}
+
+.page-content-blurred {
+  opacity:.5;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.arrow-up-wrapper {
+  position:fixed;
+  height:0px;
+}
