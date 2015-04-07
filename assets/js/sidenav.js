@@ -52,7 +52,7 @@ $(function(){
 
 
   //HANDLES SCROLL TO NAVIGATION
-  $('.side-nav ul').on('click', 'a', function(e){
+  $('.side-nav ul').on('click', 'a.scroll-link', function(e){
     e.preventDefault();
     var loc = $(this).attr('data-link');
     loc = ".section-" + loc;
@@ -78,7 +78,7 @@ $(function(){
     return false;
   });
 
-  $('.side-nav').on('click', '.headshot', function(e){
+  $('.side-nav').on('click', 'h1', function(e){
     $('i.fa-close').addClass('hidden');
     $('.side-nav').toggleClass('sidenav-open');
     $('.nav-toggle').toggleClass('hidden');

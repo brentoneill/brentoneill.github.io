@@ -257,8 +257,11 @@ h3 {
   border-right: 0;
   text-align: center;
   visibility: 0; }
-  .side-nav .headshot {
-    height: 140px; }
+  .side-nav h1 {
+    cursor: pointer;
+    transition: all .3s ease-in-out; }
+    .side-nav h1:hover {
+      color: #45B29D; }
   .side-nav h5 {
     margin-top: -20px;
     font-size: 1em;
@@ -457,17 +460,24 @@ section {
 
 .about {
   color: white; }
+  .about h4 {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto; }
+  .about table {
+    margin: 0 auto;
+    margin-bottom: 20px; }
+  .about td {
+    font-size: 1.218em;
+    vertical-align: top; }
+  .about td:first-child {
+    text-align: right; }
+  .about td:last-child {
+    padding-left: 10px;
+    text-align: left;
+    font-weight: 300; }
   .about .row {
     text-align: center; }
-    .about .row ul {
-      text-align: left;
-      width: 80%;
-      margin: 0 auto;
-      margin-bottom: 20px; }
-      .about .row ul h4 {
-        font-weight: 300; }
-      .about .row ul li {
-        padding-left: 10px; }
   .about .about-text {
     width: 80%;
     margin: 0 auto;
@@ -908,6 +918,9 @@ i.fa-chevron-right {
     text-shadow: none; }
 
   .resume-link {
-    display: block; } }
+    display: block; }
+
+  .about .about-text {
+    font-size: 1.218em; } }
 
 /*# sourceMappingURL=compiled.css.map */

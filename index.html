@@ -30,9 +30,10 @@
       <h1>B</h1>
       <h5>Brent O'Neill</h5>
       <ul>
-        <li><a href="#" data-link="0">about</a></li>
-        <li><a href="#" data-link="1">work</a></li>
-        <li><a href="#" data-link="2">skills</a></li>
+        <li><a class="scroll-link" href="#" data-link="0">about</a></li>
+        <li><a class="scroll-link" href="#" data-link="1">work</a></li>
+        <li><a class="scroll-link" href="#" data-link="2">skills</a></li>
+        <li><a href="http://registry.jsonresume.org/brentoneill" target="_blank">resume</a></li>
       </ul>
       <a href="http://github.com/brentoneill" target="_blank"><i class="fa fa-2x fa-github"></i></a>
       &nbsp;
@@ -78,16 +79,28 @@
           <h2 class="animate bounceInLeft wow">hi, <small class="subheader">nice to meet you!</small></h2>
           <div class="row">
             <img class="headshot" src="assets/images/Brent_O'Neill.jpg" alt="">
-            <ul>
               <h4>Some quick stats:</h4>
-              <li><b>Years active: </b> 2014-present (1 year, 3 months)</li>
-              <li><b>Training: </b> Front End Engineering at The Iron Yard (2015)</li>
-              <li><b>Technologies: </b> WordPress, Magento, Front End Web Development</li>
-              <li><b>Degree: </b> Bachelor's of Science in Business Administration - Finance from Georgia Tech</li>
-              <li></li>
-            </ul>
+
+              <table>
+                <tr>
+                  <td><b>Years active: </b> </td>
+                  <td>2014-present (1 year, 3 months)</td>
+                </tr>
+                <tr>
+                  <td><b>Training: </b></td>
+                  <td> Front End Engineering at The Iron Yard (2015)</td>
+                </tr>
+                <tr>
+                  <td><b>Technologies: </b> </td>
+                  <td>WordPress, Magento, Front End Web Development (AngularJS, jQuery, CSS)</td>
+                </tr>
+                <tr>
+                  <td><b>Degree: </b> </td>
+                  <td>Bachelor's of Science in Business Administration - Finance from Georgia Tech</td>
+                </tr>
+              </table>
             <p class="about-text">
-              My name is Brent O'Neill and I love to build things. I began developing on the web in the beginning of 2014 and decided to up my game by attending The Iron Yard's Front End Engineering program in Charleston, SC. I have a passion for smart, responsive web development and front end web applications that provide an awesome user experience through the marriage of sound development and brilliant design.
+              My name is Brent O'Neill and I love to build things.
             </p>
             <p class="about-text">
               Right now, I am really passionate about AngularJS and the rest of the MEAN stack. Want to talk MEAN? Have questions about my work? Or, maybe you just want to chat. Drop me a line at <a href="mailto:brentoneill@gmail.com">brentoneill@gmail.com</a> and let's get the conversation started.
@@ -116,7 +129,7 @@
                 <a href="http://dev-desk.herokuapp.com" target="_blank"><img class="portfolio-image" src="assets/images/devdesk-screenshot.jpeg" alt=""></a>
               </div>
               <p class="portfolio-text">
-                The idea for devdesk came about through my own trials and tribulations as a freelance developer. I was tired of having to use three or applications to track time, manage project docs, and handle client information -- devdesk is my solution to that problem.
+                The idea for devdesk came about through my own trials and tribulations as a freelance developer. I was tired of having to use three or more applications to track time, manage project docs, and handle client information -- devdesk is my solution to that problem.
               </p>
               <p class="portfolio-text">
                 <b>Tech:</b> AngularJS, Node.js, Express, MongoDB, Underscore.js, SASS, HTML
@@ -274,19 +287,6 @@
             </div>
           </div>
 
-
-          <!-- <form action="">
-            <div class="form-control">
-              <input type="text" id="name" name="name" placeholder="let's start with your name here">
-            </div>
-            <div class="form-control">
-              <input type="text" id="email" name="email" placeholder="next, your email address goes here">
-            </div>
-            <div class="form-control">
-              <textarea name="message" id="message" cols="30" rows="10" placeholder="and finally your message"></textarea>
-            </div>
-          </form> -->
-
         </div>
         <div class="grad-reverse">
           <div></div>
@@ -300,7 +300,6 @@
     </div>
 
     <script src="assets/bower_components/jquery/dist/jquery.js"></script>
-    <script src="assets/bower_components/scrollReveal.js/scrollReveal.js"></script>
     <script src="assets/bower_components/slick.js/slick/slick.js"></script>
     <script src="assets/bower_components/wow.js/dist/wow.js"></script>
     <script src="assets/js/sidenav.js"></script>

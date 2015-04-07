@@ -131,20 +131,29 @@ $k : 0;
 
 .about {
   color:white;
+  h4 {
+    text-align:left;
+    width:80%;
+    margin: 0 auto;
+  }
+  table {
+    margin:0 auto;
+    margin-bottom:20px;
+  }
+  td {
+    font-size:1.218em;
+    vertical-align:top;
+  }
+  td:first-child {
+    text-align:right;
+  }
+  td:last-child {
+    padding-left:10px;
+    text-align:left;
+    font-weight:300;
+  }
   .row {
     text-align:center;
-    ul {
-      text-align:left;
-      width:80%;
-      margin:0 auto;
-      margin-bottom:20px;
-      h4 {
-        font-weight:300;
-      }
-      li {
-        padding-left:10px;
-      }
-    }
   }
   .about-text {
     width:80%;

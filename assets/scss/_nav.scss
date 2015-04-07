@@ -32,8 +32,12 @@
   border-right:0;
   text-align:center;
   visibility:0;
-  .headshot {
-    height:140px;
+  h1 {
+    cursor: pointer;
+    transition:all .3s ease-in-out;
+    &:hover {
+      color:$teal;
+    }
   }
   h5 {
     margin-top:-20px;
