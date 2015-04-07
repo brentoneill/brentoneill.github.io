@@ -247,16 +247,13 @@ h3 {
 .side-nav {
   z-index: 100;
   position: fixed;
-  bottom: -1000px;
-  transition: all .3s ease-in-out;
-  border: thin solid #F5F5F5;
-  border-radius: 2px;
+  top: -1000px;
+  transition: top .3s ease-in-out;
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   border-right: 0;
-  text-align: center;
-  visibility: 0; }
+  text-align: center; }
   .side-nav h1 {
     cursor: pointer;
     transition: all .3s ease-in-out; }
@@ -315,19 +312,13 @@ h3 {
       color: #45B29D; }
 
 .sidenav-open {
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
-  visibility: visible; }
+  top: 0px; }
 
 .hidden {
   display: none; }
 
 .nav-toggle-flush {
   right: 240px; }
-
-.page-content {
-  transition: all .3s ease-in-out; }
 
 .page-content-blurred {
   opacity: .5;
@@ -637,9 +628,11 @@ i.fa-chevron-right {
     font-size: 3.6em;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: all .5s ease; }
+    transition: all .5s ease;
+    display: inline-block; }
     .skills i:hover {
-      transform: scale(1.2); }
+      transform: scale(1.2);
+      -moz-transform: scale(1.2); }
   .skills i:last-child {
     margin-right: 0px; }
 

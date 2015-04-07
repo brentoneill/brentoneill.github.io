@@ -22,16 +22,13 @@
 .side-nav {
   z-index:100;
   position:fixed;
-  bottom:-1000px;
-  transition:all .3s ease-in-out;
-  border:thin solid $gray-light;
-  border-radius:2px;
+  top:-1000px;
+  transition:top .3s ease-in-out;
   height:100%;
   width:100%;
   background-color:rgba(white, .5);
   border-right:0;
   text-align:center;
-  visibility:0;
   h1 {
     cursor: pointer;
     transition:all .3s ease-in-out;
@@ -104,10 +101,7 @@ a:hover:before {
 }
 
 .sidenav-open {
-  bottom:0px;
-  width:100%;
-  height:100%;
-  visibility: visible;
+  top:0px;
 }
 
 .hidden {
@@ -119,7 +113,6 @@ a:hover:before {
 }
 
 .page-content {
-  transition: all .3s ease-in-out;
 }
 
 .page-content-blurred {

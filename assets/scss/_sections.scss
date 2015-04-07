@@ -357,8 +357,10 @@ i.fa-chevron-right {
     cursor:pointer;
     margin-bottom:10px;
     transition: all .5s ease;
+    display:inline-block;
     &:hover {
       transform: scale(1.2);
+      -moz-transform: scale(1.2);
     }
   }
   i:last-child{
