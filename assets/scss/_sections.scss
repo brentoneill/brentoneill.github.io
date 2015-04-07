@@ -81,6 +81,10 @@ $k : 0;
   padding-top:0px;
   position:relative;
   min-height:100vh;
+  .caption-wrapper {
+    width:75%;
+    margin:0 auto;
+  }
   .caption {
     width: 100%;
     padding: 20px;
@@ -129,7 +133,18 @@ $k : 0;
   color:white;
   .row {
     text-align:center;
-    padding-top:40px;
+    ul {
+      text-align:left;
+      width:80%;
+      margin:0 auto;
+      margin-bottom:20px;
+      h4 {
+        font-weight:300;
+      }
+      li {
+        padding-left:10px;
+      }
+    }
   }
   .about-text {
     width:80%;
@@ -138,6 +153,14 @@ $k : 0;
     font-size: 1.618em;
     margin-bottom:20px;
     font-weight:300;
+    a {
+      color:black;
+      text-decoration:underline;
+      transition: all .3s ease-in-out;
+      &:hover {
+        color:white;
+      }
+    }
   }
   img {
     border-color:white;
@@ -357,5 +380,16 @@ i.fa-chevron-right {
     &:hover {
       border-bottom-color:white;
     }
+  }
+}
+
+.magento-logo {
+  display:inline;
+  width:58px;
+  height:58px;
+  transition: all .5s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
   }
 }

@@ -419,6 +419,9 @@ section {
   padding-top: 0px;
   position: relative;
   min-height: 100vh; }
+  .header .caption-wrapper {
+    width: 75%;
+    margin: 0 auto; }
   .header .caption {
     width: 100%;
     padding: 20px;
@@ -455,8 +458,16 @@ section {
 .about {
   color: white; }
   .about .row {
-    text-align: center;
-    padding-top: 40px; }
+    text-align: center; }
+    .about .row ul {
+      text-align: left;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 20px; }
+      .about .row ul h4 {
+        font-weight: 300; }
+      .about .row ul li {
+        padding-left: 10px; }
   .about .about-text {
     width: 80%;
     margin: 0 auto;
@@ -464,6 +475,12 @@ section {
     font-size: 1.618em;
     margin-bottom: 20px;
     font-weight: 300; }
+    .about .about-text a {
+      color: black;
+      text-decoration: underline;
+      transition: all .3s ease-in-out; }
+      .about .about-text a:hover {
+        color: white; }
   .about img {
     border-color: white;
     height: 240px;
@@ -636,6 +653,15 @@ i.fa-chevron-right {
     border-bottom: thin solid transparent; }
     .contact a:hover {
       border-bottom-color: white; }
+
+.magento-logo {
+  display: inline;
+  width: 58px;
+  height: 58px;
+  transition: all .5s ease;
+  cursor: pointer; }
+  .magento-logo:hover {
+    transform: scale(1.2); }
 
 .fb {
   position: relative;
