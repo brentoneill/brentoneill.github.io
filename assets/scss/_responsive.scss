@@ -7,8 +7,7 @@
   }
   .header {
     .caption {
-      top:0;
-      padding-top:5px;
+      top:70px;
     }
   }
   .about {
@@ -23,6 +22,9 @@
     margin-right:0px;
     margin-bottom:10px;
     display: inline-block;
+  }
+  .section-2.skills {
+    margin-right:-80px;
   }
 }
 
@@ -104,5 +106,35 @@
   i.fa-chevron-right,
   i.fa-chevron-left {
     display:none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .arrow-wrapper {
+    bottom:20%;
+  }
+  .header {
+    .caption-wrapper {
+      margin-top:50px;
+      width:85%;
+    }
+  }
+  .side-nav ul li a, h4 {
+    font-size:1.218em;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    .caption-wrapper {
+      h3 {
+        font-size:1em;
+      }
+    }
+  }
+  .side-nav {
+    h1 {
+      margin-top:20px;
+    }
   }
 }

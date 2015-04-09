@@ -1,0 +1,48 @@
+.header {
+  padding-top:0px;
+  position:relative;
+  min-height:100vh;
+  .caption-wrapper {
+    width:75%;
+    margin:0 auto;
+  }
+  .caption {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    z-index: 0;
+    h4 {
+      margin-top: -20px;
+      margin-bottom: 40px;
+      font-weight: 300;
+      letter-spacing: .25em;
+      text-transform:uppercase;
+    }
+    h3:first-child {
+    }
+    .mb {
+      margin-top:20px;
+    }
+  }
+}
+
+.logo-wrapper {
+  position:absolute;
+  top:20px;
+  left:20px;
+  text-align:center;
+  h4 {
+    font-weight:700;
+    margin-bottom:-10px;
+  }
+  span {
+    font-weight:300;
+    letter-spacing:.5em;
+    text-transform: uppercase;
+    font-size:.75em;
+  }
+}

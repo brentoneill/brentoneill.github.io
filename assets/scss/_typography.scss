@@ -1,6 +1,9 @@
 //Typography declarations
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,900);
 
+//handwriting font:
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color:$black;
@@ -23,4 +26,8 @@ h2,h3,h4,h5,h6 {
 
 h3 {
   font-weight:100;
+}
+
+.cursive-text {
+  font-family: 'Rock Salt', cursive;
 }
