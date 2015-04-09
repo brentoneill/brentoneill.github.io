@@ -11,6 +11,9 @@
   position:relative;
   color:$black;
   transition:all .3s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .side-nav {
@@ -69,6 +72,7 @@
     transition:all .3s ease-in-out;
     &:hover {
       color:$teal;
+      transform:scale(1.2);
     }
   }
   a {

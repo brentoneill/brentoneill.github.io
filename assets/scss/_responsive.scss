@@ -1,9 +1,21 @@
 @media (max-width:1024px){
   .portfolio-image {
     max-height:30vh;
-
   }
-
+  h3 {
+    font-size:1.618em;
+  }
+  .header {
+    .caption {
+      top:0;
+      padding-top:5px;
+    }
+  }
+  .about {
+    .about-text {
+      font-size:1.218em;
+    }
+  }
 }
 
 @media (max-width:878px){
@@ -15,6 +27,9 @@
 }
 
 @media (max-width:786px){
+  .mb {
+    display:none;
+  }
   .nav-toggle-wrapper,
   .side-nav i.fa-close {
     top:20px;
@@ -75,11 +90,19 @@
     width:65%;
   }
   .side-nav {
-    padding-top: 100px;
     ul {
       li {
-        font-size:.618em;
+        a {
+          font-size:1.618em;
+        }
       }
     }
+  }
+}
+
+@media (max-width: 600px){
+  i.fa-chevron-right,
+  i.fa-chevron-left {
+    display:none !important;
   }
 }
