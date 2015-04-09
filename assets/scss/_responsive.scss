@@ -31,7 +31,7 @@
     font-size:2.618em;
   }
   p {
-    font-size:.75em;
+    font-size:.9em;
   }
   .subheader {
     font-size:50%;
@@ -62,16 +62,24 @@
     font-size:1.218em;
     width:100%;
   }
-  .mb {
-    display:none;
-  }
   h1 {
     font-size: 4.236em;
   }
   h3 {
     font-size:1.618em;
   }
+  section:nth-child(even) {
+    padding-bottom:100px;
+  }
   .container {
-    width:90%;
+    width:65%;
+  }
+  .side-nav {
+    padding-top: 100px;
+    ul {
+      li {
+        font-size:.618em;
+      }
+    }
   }
 }

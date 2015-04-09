@@ -230,17 +230,11 @@ h3 {
   top: 40px;
   right: 40px;
   transition: all .3s ease;
-  z-index: 100; }
+  z-index: 1000; }
 
 .nav-toggle {
   cursor: pointer;
   position: relative;
-  /*   i.fa-reorder {
-    transition:all .3s ease-in-out;
-    &:hover {
-      color:$teal;
-    }
-  } */
   color: #343434;
   transition: all .3s ease-in-out; }
 
@@ -256,6 +250,9 @@ h3 {
   text-align: center; }
   .side-nav h1 {
     cursor: pointer;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
     transition: all .3s ease-in-out; }
     .side-nav h1:hover {
       color: #45B29D; }
@@ -264,7 +261,8 @@ h3 {
     font-size: 1em;
     font-weight: 300;
     margin-bottom: 20px;
-    letter-spacing: .6em; }
+    letter-spacing: .6em;
+    text-transform: uppercase; }
   .side-nav h4 {
     font-weight: 100;
     margin-top: 10px; }
@@ -273,25 +271,7 @@ h3 {
     .side-nav ul li {
       position: relative;
       width: 150px;
-      margin: 0 auto;
-      /*       a:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background-color:$teal;
-        visibility: hidden;
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        transition: all .3s ease-in-out;
-      }
-      a:hover:before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-      } */ }
+      margin: 0 auto; }
       .side-nav ul li a {
         font-size: 2.618em;
         font-weight: 100;
@@ -354,33 +334,46 @@ section {
 .grad,
 .grad-reverse {
   position: absolute;
-  bottom: 0px;
+  z-index: 1; }
+
+.grad {
+  transform: rotate(5deg);
+  bottom: -10%;
+  left: -10%;
+  width: 120%; }
+  .grad div:first-child {
+    box-shadow: 0px -2px 40px rgba(0, 0, 0, 0.2); }
+
+.grad-reverse {
+  transform: rotate(-10deg);
   left: 0px;
   width: 100%;
-  z-index: 1; }
+  bottom: 0px; }
+  .grad-reverse div:first-child {
+    box-shadow: inset 0 20px 20px -20px #000000; }
 
 .grad div:nth-child(1) {
   background-color: #d4efea;
-  height: 3vh;
+  height: 4vh;
   width: 100%; }
 
 .grad div:nth-child(2) {
   background-color: #8bd2c4;
-  height: 6vh;
+  height: 8vh;
   width: 100%; }
 
 .grad div:nth-child(3) {
   background-color: #72c9b8;
-  height: 9vh;
+  height: 12vh;
   width: 100%; }
 
 .grad div:nth-child(4) {
   background-color: #66c4b2;
-  height: 12vh;
+  height: 16vh;
   width: 100%; }
 
-.grad-reverse {
-  z-index: -0; }
+.grad div:last-child {
+  height: 20vh; }
 
 .grad-reverse div:nth-child(1) {
   background-color: #66c4b2;
@@ -407,7 +400,8 @@ section {
 .section-2,
 .section-3 {
   background-color: #66c4b2;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  color: white; }
 
 .header {
   padding-top: 0px;
@@ -429,14 +423,18 @@ section {
       margin-top: -20px;
       margin-bottom: 40px;
       font-weight: 300;
-      letter-spacing: .25em; }
+      letter-spacing: .25em;
+      text-transform: uppercase; }
     .header .caption h3 {
       margin-bottom: 20px; }
 
 .arrow-wrapper {
+  position: absolute;
   margin: 0 auto;
   padding-top: 20px;
-  width: 100px;
+  width: 100%;
+  left: 0;
+  bottom: 22.5%;
   text-align: center; }
   .arrow-wrapper i.fa-chevron-down {
     cursor: pointer;
@@ -449,46 +447,44 @@ section {
       -o-animation: upDown 2s infinite;
       animation: upDown 2s infinite; }
 
-.about {
-  color: white; }
-  .about h4 {
-    text-align: left;
-    width: 80%;
-    margin: 0 auto; }
-  .about table {
-    margin: 0 auto;
-    margin-bottom: 20px; }
-  .about td {
-    font-size: 1.218em;
-    vertical-align: top; }
-  .about td:first-child {
-    text-align: right; }
-  .about td:last-child {
-    padding-left: 10px;
-    text-align: left;
-    font-weight: 300; }
-  .about .row {
-    text-align: center; }
-  .about .about-text {
-    width: 80%;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1.618em;
-    margin-bottom: 20px;
-    font-weight: 300; }
-    .about .about-text a {
-      color: black;
-      text-decoration: underline;
-      transition: all .3s ease-in-out; }
-      .about .about-text a:hover {
-        color: white; }
-  .about img {
-    border-color: white;
-    height: 240px;
-    vertical-align: middle;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    display: inline-block; }
+.about h4 {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto; }
+.about table {
+  margin: 0 auto;
+  margin-bottom: 20px; }
+.about td {
+  font-size: 1.218em;
+  vertical-align: top; }
+.about td:first-child {
+  text-align: right; }
+.about td:last-child {
+  padding-left: 10px;
+  text-align: left;
+  font-weight: 300; }
+.about .row {
+  text-align: center; }
+.about .about-text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.618em;
+  margin-bottom: 20px;
+  font-weight: 300; }
+  .about .about-text a {
+    color: black;
+    text-decoration: underline;
+    transition: all .3s ease-in-out; }
+    .about .about-text a:hover {
+      color: white; }
+.about img {
+  border-color: white;
+  height: 240px;
+  vertical-align: middle;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: inline-block; }
 
 .contact form {
   width: 75%;
@@ -551,7 +547,6 @@ section {
 .portfolio-item {
   color: white; }
   .portfolio-item a {
-    color: black;
     text-decoration: underline;
     transition: all .3s ease-in-out; }
     .portfolio-item a:hover {
@@ -610,8 +605,6 @@ i.fa-chevron-right {
   .skills .col-three-quarters {
     margin: 0 auto;
     text-align: center; }
-  .skills .arrow-wrapper {
-    margin-top: 100px; }
   .skills h2 {
     margin-bottom: 40px; }
   .skills .row {
@@ -627,7 +620,6 @@ i.fa-chevron-right {
     margin-right: 20px;
     margin-bottom: 20px;
     font-size: 3.6em;
-    cursor: pointer;
     margin-bottom: 10px;
     transition: all .5s ease;
     display: inline-block; }
@@ -648,7 +640,7 @@ i.fa-chevron-right {
 .contact {
   color: white; }
   .contact .row {
-    margin-top: 20vh; }
+    margin-top: 10vh; }
   .contact h3 {
     margin-bottom: 20px; }
   .contact a {
@@ -666,6 +658,32 @@ i.fa-chevron-right {
   cursor: pointer; }
   .magento-logo:hover {
     transform: scale(1.2); }
+
+.page-content {
+  overflow: hidden; }
+
+.content-wrapper {
+  margin-top: 60px;
+  padding-bottom: 340px; }
+
+[class^="section-"] {
+  margin: 0 -60px;
+  transform-origin: left center; }
+
+[class^="section-"]:nth-child(odd) {
+  background: #000;
+  transform: rotate(5deg);
+  margin-top: -340px;
+  box-shadow: 0px -3px 20px rgba(0, 0, 0, 0.5); }
+  [class^="section-"]:nth-child(odd) .container {
+    transform: rotate(-5deg); }
+
+[class^="section-"]:nth-child(even) {
+  background-color: #66c4b2;
+  transform: rotate(-5deg);
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.5) inset; }
+  [class^="section-"]:nth-child(even) .container {
+    transform: rotate(5deg); }
 
 .fb {
   position: relative;
@@ -890,7 +908,7 @@ i.fa-chevron-right {
     font-size: 2.618em; }
 
   p {
-    font-size: .75em; }
+    font-size: .9em; }
 
   .subheader {
     font-size: 50%; }
@@ -918,16 +936,21 @@ i.fa-chevron-right {
     font-size: 1.218em;
     width: 100%; }
 
-  .mb {
-    display: none; }
-
   h1 {
     font-size: 4.236em; }
 
   h3 {
     font-size: 1.618em; }
 
+  section:nth-child(even) {
+    padding-bottom: 100px; }
+
   .container {
-    width: 90%; } }
+    width: 65%; }
+
+  .side-nav {
+    padding-top: 100px; }
+    .side-nav ul li {
+      font-size: .618em; } }
 
 /*# sourceMappingURL=compiled.css.map */

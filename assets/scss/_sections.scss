@@ -27,24 +27,36 @@ section{
 }
 
 
-.section-0 {
-}
-
 .grad,
 .grad-reverse {
   position:absolute;
-  bottom:0px;
-  left:0px;
-  width:100%;
   z-index:1;
 }
 
+.grad {
+  transform: rotate(5deg);
+  bottom:-10%;
+  left:-10%;
+  width:120%;
+  div:first-child {
+    box-shadow: 0px -2px 40px rgba(0,0,0,0.2);
+  }
+}
 
+.grad-reverse {
+  transform: rotate(-10deg);
+  left:0px;
+  width:100%;
+  bottom:0px;
+  div:first-child {
+    box-shadow: inset 0 20px 20px -20px #000000;
+  }
+}
 
 @for $i from 1 through 4 {
   .grad div:nth-child(#{$i}){
     background-color:lighten($teal, 40% / $i);
-    height: $i * 3vh;
+    height: $i * 4vh;
     width:100%;
   }
   @if $i > 4 {
@@ -55,8 +67,8 @@ section{
   }
 }
 
-.grad-reverse {
-  z-index:-0;
+.grad div:last-child {
+  height:20vh;
 }
 
 $k : 0;
@@ -75,7 +87,9 @@ $k : 0;
 .section-3 {
   background-color:lighten($teal, 40/4);
   padding-bottom:20px;
+  color:white;
 }
+
 
 .header {
   padding-top:0px;
@@ -99,6 +113,7 @@ $k : 0;
       margin-bottom: 40px;
       font-weight: 300;
       letter-spacing: .25em;
+      text-transform:uppercase;
     }
     h3 {
       margin-bottom:20px;
@@ -107,9 +122,12 @@ $k : 0;
 }
 
 .arrow-wrapper {
+  position: absolute;
   margin: 0 auto;
   padding-top: 20px;
-  width: 100px;
+  width: 100%;
+  left: 0;
+  bottom: 22.5%;
   text-align: center;
   i.fa-chevron-down {
     cursor:pointer;
@@ -130,7 +148,6 @@ $k : 0;
 
 
 .about {
-  color:white;
   h4 {
     text-align:left;
     width:80%;
@@ -236,8 +253,7 @@ $k : 0;
   transform: rotateX(50deg) rotateY(0deg) rotateZ(-20deg) scale(0.8);
   opacity: 1;
   transition: all .5s ease;
-  &:hover
-   {
+  &:hover {
     -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(-0deg) scale(1);
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
   }
@@ -259,7 +275,6 @@ $k : 0;
 .portfolio-item{
   color:white;
   a {
-    color:black;
     text-decoration:underline;
     transition: all .3s ease-in-out;
     &:hover {
@@ -332,9 +347,6 @@ i.fa-chevron-right {
     margin:0 auto;
     text-align:center;
   }
-  .arrow-wrapper {
-    margin-top:100px;
-  }
   h2 {
     margin-bottom:40px;
   }
@@ -355,7 +367,6 @@ i.fa-chevron-right {
     margin-right: 20px;
     margin-bottom:20px;
     font-size:3.6em;
-    cursor:pointer;
     margin-bottom:10px;
     transition: all .5s ease;
     display:inline-block;
@@ -380,7 +391,7 @@ i.fa-chevron-right {
 .contact{
   color:white;
   .row {
-    margin-top:20vh;
+    margin-top:10vh;
   }
   h3 {
     margin-bottom:20px;
@@ -403,5 +414,36 @@ i.fa-chevron-right {
   cursor: pointer;
   &:hover {
     transform: scale(1.2);
+  }
+}
+
+.page-content {
+  overflow:hidden;
+}
+
+.content-wrapper {
+  margin-top:60px;
+  padding-bottom:340px;
+}
+
+[class^="section-"]{
+	margin: 0 -60px;
+	transform-origin: left center;
+}
+[class^="section-"]:nth-child(odd){
+	background: #000;
+	transform: rotate(5deg);
+	margin-top: -340px;
+	box-shadow: 0px -3px 20px rgba(0,0,0,0.5);
+  .container {
+    transform: rotate(-5deg);
+  }
+}
+[class^="section-"]:nth-child(even){
+  background-color:lighten($teal, 40/4);
+	transform: rotate(-5deg);
+	box-shadow: 0px 3px 20px rgba(0,0,0,0.5) inset;
+  .container {
+    transform: rotate(5deg);
   }
 }
