@@ -1,3 +1,7 @@
+.collapsed-table {
+  display:none;
+}
+
 @media (max-width:1024px){
   .portfolio-image {
     max-height:30vh;
@@ -29,6 +33,17 @@
 }
 
 @media (max-width:786px){
+  .skills-table {
+    display:none;
+  }
+  .collapsed-table {
+    display:block;
+    margin-bottom:20px;
+    text-align:left;
+    p{
+      margin-left:20px;
+    }
+  }
   .mb {
     display:none;
   }
@@ -115,12 +130,15 @@
   }
   .header {
     .caption-wrapper {
-      margin-top:50px;
+      margin-top:0px;
       width:85%;
     }
   }
   .side-nav ul li a, h4 {
     font-size:1.218em;
+  }
+  .logo-wrapper {
+    display:none;
   }
 }
 

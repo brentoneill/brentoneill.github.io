@@ -808,6 +808,9 @@ section.section-0.about {
     transform: translate(0px, 0px); }
   50% {
     transform: translate(0px, 20px); } }
+.collapsed-table {
+  display: none; }
+
 @media (max-width: 1024px) {
   .portfolio-image {
     max-height: 30vh; }
@@ -829,6 +832,16 @@ section.section-0.about {
   .section-2.skills {
     margin-right: -80px; } }
 @media (max-width: 786px) {
+  .skills-table {
+    display: none; }
+
+  .collapsed-table {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left; }
+    .collapsed-table p {
+      margin-left: 20px; }
+
   .mb {
     display: none; }
 
@@ -899,11 +912,14 @@ section.section-0.about {
     bottom: 20%; }
 
   .header .caption-wrapper {
-    margin-top: 50px;
+    margin-top: 0px;
     width: 85%; }
 
   .side-nav ul li a, h4 {
-    font-size: 1.218em; } }
+    font-size: 1.218em; }
+
+  .logo-wrapper {
+    display: none; } }
 @media (max-width: 320px) {
   .header .caption-wrapper h3 {
     font-size: 1em; }
