@@ -3,6 +3,7 @@ $(function(){
   //Handles nav toggle color change
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
+    console.log(scroll);
     if(scroll > 600) {
       $('.nav-toggle').css('color', 'white');
       $('.caption').css('display', 'none');
@@ -11,6 +12,10 @@ $(function(){
       $('.nav-toggle').css('color', 'black');
       $('.caption').css('display', 'block');
     }
+
+    var grad1 = $('.grad').eq(0);
+    
+
   });
 
 
