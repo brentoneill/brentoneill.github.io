@@ -30,6 +30,8 @@
     background-color:lighten($teal, 40% / $i);
     height: $i * 4vh;
     width:100%;
+    transition:height .3s ease;
+    margin-top:-1px;
   }
   @if $i > 4 {
     .grad div:nth-child(5){

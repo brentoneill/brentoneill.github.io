@@ -1,5 +1,8 @@
 $(function(){
 
+  var grads = $('.grad').children();
+  console.log(grads);
+
   //Handles nav toggle color change
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
@@ -7,14 +10,32 @@ $(function(){
     if(scroll > 600) {
       $('.nav-toggle').css('color', 'white');
       $('.caption').css('display', 'none');
+
+
     }
+
+    if( scroll > 200){
+      var scrollness = scroll/200;
+      console.log(scrollness);
+      grads[0].css('height', scrollness);
+    }
+    // if(scroll > 300){
+    //   for( var i = 0 ; i < grads.length ; i++ ){
+    //     var grad = $('.grad div:nth-child(' + i + ')');
+    //     grad.css('height', '2vh');
+    //   }
+    // }
     else {
       $('.nav-toggle').css('color', 'black');
       $('.caption').css('display', 'block');
-    }
+      var grad1 = $('.grad div:nth-child(1)');
 
-    var grad1 = $('.grad').eq(0);
-    
+      for( var i = 0 ; i < grads.length ; i++ ){
+        var grad = $('.grad div:nth-child(' + i + ')')
+        grad.removeAttr('style');
+      }
+
+    }
 
   });
 
@@ -29,6 +50,7 @@ $(function(){
       offset:       0,          // distance to the element when triggering the animation (default is 0)
       mobile:       false,       // trigger animations on mobile devices (default is true)
       live:         true,       // act on asynchronously loaded content (default is true)
+
     }
   );
   wow.init();

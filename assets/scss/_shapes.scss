@@ -1,0 +1,14 @@
+#triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid gainsboro;
+}
+
+.tri-wrapper {
+	position:fixed;
+	top:10%;
+	left:20%;
+	z-index:-100;
+}
