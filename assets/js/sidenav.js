@@ -1,22 +1,17 @@
 $(function(){
 
   var grads = $('.grad').children();
-  console.log(grads);
 
   //Handles nav toggle color change
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    console.log(scroll);
     if(scroll > 600) {
       $('.nav-toggle').css('color', 'white');
       $('.caption').css('display', 'none');
-
-
     }
 
     if( scroll > 200){
       var scrollness = scroll/200;
-      console.log(scrollness);
       grads[0].css('height', scrollness);
     }
     // if(scroll > 300){
@@ -38,9 +33,6 @@ $(function(){
     }
 
   });
-
-
-
 
   //Initialize wow.js
   var wow = new WOW(
