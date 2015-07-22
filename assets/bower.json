@@ -20,6 +20,7 @@
     "slick.js": "~1.5.0",
     "scrollReveal.js": "~2.2.0",
     "wow.js": "~1.1.0",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "devicons": "~1.8.0"
   }
 }

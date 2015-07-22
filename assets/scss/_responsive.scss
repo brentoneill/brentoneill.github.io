@@ -36,6 +36,9 @@
   .skills-table {
     display:none;
   }
+  i[data-link="1"] {
+    margin-bottom: 40px;
+  }
   .collapsed-table {
     display:block;
     margin-bottom:20px;
@@ -87,9 +90,7 @@
     font-weight:300;
     text-shadow:none;
   }
-  .resume-link {
-    display:block;
-  }
+
   .about .about-text {
     font-size:1.218em;
     width:100%;
@@ -139,6 +140,12 @@
   }
   .logo-wrapper {
     display:none;
+  }
+}
+
+@media (max-width: 390px) {
+  .resume-link {
+    display:block;
   }
 }
 

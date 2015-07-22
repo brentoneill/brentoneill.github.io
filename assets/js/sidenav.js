@@ -26,7 +26,7 @@ $(function(){
       var grad1 = $('.grad div:nth-child(1)');
 
       for( var i = 0 ; i < grads.length ; i++ ){
-        var grad = $('.grad div:nth-child(' + i + ')')
+        var grad = $('.grad div:nth-child(' + i + ')');
         grad.removeAttr('style');
       }
 
