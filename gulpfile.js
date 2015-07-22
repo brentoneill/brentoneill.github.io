@@ -14,7 +14,7 @@ var jshint = require('gulp-jshint'),
     autoprefixer = require('gulp-autoprefixer'),
     minifyHtml = require('gulp-minify-html'),
     htmlreplace = require('gulp-html-replace'),
-    // clean = require('gulp-clean'),
+    clean = require('gulp-clean'),
     // changed = require('gulp-change'),
     // inject = require('gulp-inject'),
     // copy = require('gulp-copy'),
@@ -42,68 +42,75 @@ var jshint = require('gulp-jshint'),
         .pipe(gulp.dest('assets/css'))
     });
 
-    // // Sass build task
-    // gulp.task('sass-build', function() {
-    //   return gulp.src('assets/scss/*.scss')
-    //     .pipe(sass({ errLogToConsole: true }))
-    //     .pipe(gulp.dest('dist/stylesheets/css'))
-    //     .pipe(autoprefixer({
-    //       browser: ['last 2 versions'],
-    //     }))
-    //     .pipe(cssmin())
-    //     .pipe(rename({ suffix: '.min' }))
-    //     .pipe(gulp.dest('dist/assets/stylesheets/css'))
-    // });
+    // Sass build task
+    gulp.task('sass-build', function() {
+      return gulp.src('assets/scss/*.scss')
+        .pipe(sass({ errLogToConsole: true }))
+        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(autoprefixer({
+          browser: ['last 2 versions'],
+        }))
+        .pipe(cssmin())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/assets/css'))
+    });
 
-    // // JS build task
-    // gulp.task('js-build', function() {
-    //   return gulp.src('assets/scripts/*.js')
-    //     .pipe(concat('compiled.js'))
-    //     .pipe(gulp.dest('dist/assets/js'))          // Saves a non-minified version
-    //     .pipe(uglify())
-    //     .pipe(rename({ suffix: '.min '}))
-    //     .pipe(gulp.dest('dist/assets/js'))          // Saves a minified version
-    // });
+    // JS build task
+    gulp.task('js-build', function() {
+      return gulp.src('assets/js/*.js')
+        .pipe(concat('compiled.js'))
+        .pipe(gulp.dest('dist/assets/js'))          // Saves a non-minified version
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min'}))
+        .pipe(gulp.dest('dist/assets/js'))          // Saves a minified version
+    });
 
-    // // HTML build task
-    // gulp.task('html-build', function() {
-    //   return gulp.src('*.html')
-    //     .pipe(htmlreplace({
-    //       'css': ['assets/stylesheets/css/main.min.css', 'assets/vendor/css/vendor.min.css'],
-    //       'js': ['assets/js/compiled.min.js', 'assets/vendor/js/vendor.js']
-    //     }))
-    //     //.pipe(minifyHtml())
-    //     .pipe(gulp.dest('dist'))
-    // });
+    // HTML build task
+    gulp.task('html-build', function() {
+      return gulp.src('*.html')
+        .pipe(htmlreplace({
+          'vendorcss': 'assets/vendor/css/vendor.min.css',    // Not found
+          'vendorjs': 'assets/vendor/js/vendor.js',           // Not found
+          'maincss': 'assets/css/style.min.css',
+          'mainjs': 'assets/js/compiled.min.js'
+        }))
+        .pipe(minifyHtml())
+        .pipe(gulp.dest('dist'))
+    });
 
-    // // Images Build task
-    // gulp.task('img-build', function() {
-    //   return gulp.src('assets/img/*')
-    //     .pipe(imagemin())
-    //     .pipe(gulp.dest('dist/assets/img'))
-    // });
+    // IMAGES Build task
+    gulp.task('img-build', function() {
+      return gulp.src('assets/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/assets/images'))
+    });
 
-    // // VENDOR Styles task
-    // gulp.task('vendorcss', function() {
-    //   return gulp.src([
-    //     'bower_components/animate.css/animate.css',
-    //     'bower_components/font-awesome/css/font-awesome.css',
-    //     'bower_components/bootstrap/dist/css/bootstrap.css']
-    //   )
-    //     .pipe(cssmin())
-    //     .pipe(concat('vendor.css'))
-    //     .pipe(rename({ suffix: '.min '}))
-    //     .pipe(gulp.dest('dist/assets/vendor/css'))
-    // });
+    // VENDOR Styles task
+    gulp.task('vendorcss', function() {
+        return gulp.src([
+          'assets/bower_components/bootstrap/dist/css/bootstrap.css',
+          'assets/bower_components/font-awesome/css/font-awesome.css',
+          'assets/bower_components/devicons/css/devicons.css',
+          'assets/bower_components/animate.css/animate.css',
+          'assets/bower_components/slick.js/slick/slick.css',
+          'assets/bower_components/slick.js/slick/slick-theme.css',]
+        )
+        .pipe(cssmin())
+        .pipe(concat('vendor.css'))
+        .pipe(rename({ suffix: '.min '}))
+        .pipe(gulp.dest('dist/assets/vendor/css'))
+    });
 
     // VENDOR Script task
-    // gulp.task('vendorjs', function() {
-    //   return gulp.src([
-    //     'bower_components/jquery/dist/jquery.min.js']
-    //   )
-    //     .pipe(concat('vendor.js'))
-    //     .pipe(gulp.dest('dist/assets/vendor/js'))
-    // });
+    gulp.task('vendorjs', function() {
+      return gulp.src([
+        'assets/bower_components/jquery/dist/jquery.js',
+        'assets/bower_components/slick.js/slick/slick.js',
+        'assets/bower_components/wow.js/dist/wow.js']
+      )
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('dist/assets/vendor/js'))
+    });
 
     // // Cleans Dist folder for builds
     // gulp.task('dump-build', function() {
@@ -119,13 +126,14 @@ var jshint = require('gulp-jshint'),
       });
     });
 
-    // // BUILD SERVER via browsersync
-    // gulp.task('server-build', function() {
-    //   browsersync.init({
-    //     server: 'dist',
-    //     port: '4040'
-    //   })
-    // });
+    // BUILD SERVER via browsersync
+    gulp.task('server-build', ['build'], function() {
+      browsersync.init({
+        server: 'dist',
+        port: '4040'
+      })
+      return gutil.log('The magic happens on 4040...');
+    });
 
     // Browser Reaload task
     gulp.task('reload', function() {
@@ -142,7 +150,6 @@ var jshint = require('gulp-jshint'),
       return gutil.log('Gulp is running your development server ...watching Javascripts and SCSS for changes.');
     });
 
-
-    // gulp.task('build', ['js-build', 'sass-build', 'html-build', 'vendorcss', 'vendorjs', 'font-build'], function() {
-    //   return gutil.log('Gulp has built your dist folder. Cheers!')
-    // })
+    gulp.task('build', ['js-build', 'sass-build', 'html-build', 'vendorcss', 'vendorjs', 'img-build'], function() {
+      return gutil.log('Gulp has built your dist folder. Cheers!')
+    })
