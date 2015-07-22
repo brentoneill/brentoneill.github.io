@@ -181,6 +181,7 @@ section{
     text-align:center;
   }
   h2 {
+    text-align: left;
     margin-bottom:40px;
   }
   .devicons {
@@ -192,8 +193,12 @@ section{
       transform: scale(1.2);
       -moz-transform: scale(1.2);
     }
+    &:last-child {
+      margin-right: 0px;
+    }
   }
   .row {
+    margin-bottom: 40px;
     ul > li {
       margin-bottom:5px;
     }

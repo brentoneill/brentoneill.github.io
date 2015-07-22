@@ -457,6 +457,7 @@ section {
     margin: 0 auto;
     text-align: center; }
   .skills h2 {
+    text-align: left;
     margin-bottom: 40px; }
   .skills .devicons {
     display: inline-block;
@@ -466,13 +467,17 @@ section {
     .skills .devicons:hover {
       transform: scale(1.2);
       -moz-transform: scale(1.2); }
-  .skills .row ul > li {
-    margin-bottom: 5px; }
-  .skills .row h4 {
-    font-weight: 300;
-    margin-bottom: 10px; }
-  .skills .row h3 {
-    margin-bottom: 20px; }
+    .skills .devicons:last-child {
+      margin-right: 0px; }
+  .skills .row {
+    margin-bottom: 40px; }
+    .skills .row ul > li {
+      margin-bottom: 5px; }
+    .skills .row h4 {
+      font-weight: 300;
+      margin-bottom: 10px; }
+    .skills .row h3 {
+      margin-bottom: 20px; }
 
 .subheader {
   color: gainsboro;
