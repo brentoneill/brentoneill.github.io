@@ -1,0 +1,14 @@
+{
+  "name": "brentoneill.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/brentoneill/brentoneill.github.io",
+  "authors": [
+    "Brent O'Neill <brentoneill@gmail.com>"
+  ],
+  "description": "Portfolio website for Brent O'Neill",
+  "main": "index.html",
+  "license": "MIT",
+  "dependencies": {
+    "devicons": "~1.8.0"
+  }
+}
