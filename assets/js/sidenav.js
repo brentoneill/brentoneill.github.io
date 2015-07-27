@@ -53,6 +53,7 @@ $(function(){
     $sideNav.toggleClass('sidenav-open');
     $navToggle.toggleClass('hidden');
     $pageContent.toggleClass('page-content-blurred');
+    $('html, body').toggleClass('no-scroll');
   }
 
   // Event Bindings
@@ -92,7 +93,7 @@ $(function(){
   // Click on Name in Navigation
   $sideNav.on('click', 'h1', function(e){
     closeMenu();
-    navigateToSection('.header')
+    navigateToSection('.header');
   });
 
   // On click on down arrow
