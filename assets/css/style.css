@@ -279,14 +279,21 @@ h3 {
     margin-bottom: 10px; }
     .side-nav ul li {
       position: relative;
-      width: 150px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      -webkit-transition: background-color .3s ease-out;
+      transition: background-color .3s ease-out;
+      cursor: pointer; }
+      .side-nav ul li:hover {
+        background-color: #45B29D; }
+        .side-nav ul li:hover > a {
+          display: block;
+          color: white; }
       .side-nav ul li a {
         font-size: 2.618em;
         font-weight: 100;
-        transition: all .3s ease-in-out; }
+        transition: color .3s ease-out; }
         .side-nav ul li a:hover {
-          color: #45B29D; }
+          color: white; }
   .side-nav i.fa-close {
     position: fixed;
     top: 40px;

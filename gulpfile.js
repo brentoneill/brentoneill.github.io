@@ -15,11 +15,6 @@ var jshint = require('gulp-jshint'),
     minifyHtml = require('gulp-minify-html'),
     htmlreplace = require('gulp-html-replace'),
     clean = require('gulp-clean'),
-    // changed = require('gulp-change'),
-    // inject = require('gulp-inject'),
-    // copy = require('gulp-copy'),
-    // del = require('del'),
-    // cache = require('gulp-cache'),
     browsersync = require('browser-sync').create();
 
 
@@ -111,12 +106,6 @@ var jshint = require('gulp-jshint'),
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('dist/assets/vendor/js'))
     });
-
-    // // Cleans Dist folder for builds
-    // gulp.task('dump-build', function() {
-    //   return gulp.src('dist', {read: false})
-    //     .pipe(clean());
-    // });
 
     //DEVELOPMENT SERVER via browsersync
     gulp.task('server-dev', function() {

@@ -470,7 +470,7 @@ section {
     margin-bottom: 40px; }
   .skills .devicons {
     display: inline-block;
-    font-size: 3em;
+    font-size: 4em;
     margin-right: 40px;
     transition: all 0.5s ease; }
     .skills .devicons:hover {

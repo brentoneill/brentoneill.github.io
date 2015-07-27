@@ -52,14 +52,23 @@
     margin-bottom:10px;
     li {
       position:relative;
-      width:150px;
       margin:0 auto;
+      -webkit-transition: background-color .3s ease-out;
+      transition: background-color .3s ease-out;
+      cursor: pointer;
+      &:hover {
+        background-color: $teal;
+        > a {
+          display:block;
+          color: white;
+        }
+      }
       a {
         font-size:2.618em;
         font-weight:100;
-        transition:all .3s ease-in-out;
+        transition:color .3s ease-out;
         &:hover {
-          color:$teal;
+          color:white;
         }
       }
     }
