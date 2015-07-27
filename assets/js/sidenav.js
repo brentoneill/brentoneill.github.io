@@ -1,53 +1,20 @@
 $(function(){
 
-  var grads = $('.grad').children();
-
-  //Handles nav toggle color change
-  $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    if(scroll > 600) {
-      $('.nav-toggle').css('color', 'white');
-      $('.caption').css('display', 'none');
-    }
-
-    if( scroll > 200){
-      var scrollness = scroll/200;
-      grads[0].css('height', scrollness);
-    }
-    // if(scroll > 300){
-    //   for( var i = 0 ; i < grads.length ; i++ ){
-    //     var grad = $('.grad div:nth-child(' + i + ')');
-    //     grad.css('height', '2vh');
-    //   }
-    // }
-    else {
-      $('.nav-toggle').css('color', 'black');
-      $('.caption').css('display', 'block');
-      var grad1 = $('.grad div:nth-child(1)');
-
-      for( var i = 0 ; i < grads.length ; i++ ){
-        var grad = $('.grad div:nth-child(' + i + ')');
-        grad.removeAttr('style');
-      }
-
-    }
-
-  });
+  'use strict';
 
   //Initialize wow.js
   var wow = new WOW(
     {
-      boxClass:     'wow',      // animated element css class (default is wow)
-      animateClass: 'animated', // animation css class (default is animated)
-      offset:       0,          // distance to the element when triggering the animation (default is 0)
-      mobile:       false,       // trigger animations on mobile devices (default is true)
-      live:         true,       // act on asynchronously loaded content (default is true)
-
+      boxClass:     'wow',
+      animateClass: 'animated',
+      offset:       100,
+      mobile:       false,
+      live:         true,
     }
   );
   wow.init();
 
-  //Initialize slider
+  //Initialize slick.js slider
   $('.portfolio').slick({
     dots: true,
     speed: 500,
@@ -55,54 +22,86 @@ $(function(){
     nextArrow: '<i class="fa fa-3x fa-chevron-right slider-control"></i>'
   });
 
+  // Cache jQuery elements
+  var grads = $('.grad').children();
+  var $navToggle = $('nav-toggle'),
+      $caption = $('.caption'),
+      $navToggleWrapper = $('.nav-toggle-wrapper'),
+      $pageContent = $('.page-content'),
+      $sideNav = $('.side-nav'),
+      $menuCloseBtn = $('i.fa-close'),
+      $navToggle = $('.nav-toggle'),
+      $body = $('body');
+
+  // Menu functions
+  function toggleMenu (state) {
+    $pageContent.toggleClass('page-content-blurred');
+    $sideNav.toggleClass('sidenav-open');
+    $menuCloseBtn.toggleClass('hidden')
+    $navToggle.toggleClass('hidden');
+  }
+
+  function navigateToSection (section) {
+    $('html, body').animate({
+      scrollTop: ($(section).offset().top
+    )}, 800);
+  }
+
+  function closeMenu() {
+    $menuCloseBtn.addClass('hidden');
+    $sideNav.toggleClass('sidenav-open');
+    $navToggle.toggleClass('hidden');
+    $pageContent.toggleClass('page-content-blurred');
+  }
+
+  // Event Bindings
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if(scroll > 600) {
+      $navToggle.css('color', 'white');
+      $caption.css('display', 'none');
+    } else if ( scroll > 200) {
+        // DO NOTHING
+        //// TODO, add parallax style scrolling for gradient bars
+    } else {
+      // Change nav button color to black if Scroll is less than 600
+      $navToggle.css('color', 'black');
+      $caption.css('display', 'block');
+    }
+  });
+
   //HANDLES NAVIGATION TOGGLING
-  $('.nav-toggle-wrapper').on('click', '.nav-toggle', function(e){
-    $('.nav-toggle').toggleClass('hidden');
-    $('.page-content').toggleClass('page-content-blurred');
-    $('.side-nav').toggleClass('sidenav-open');
-    $('i.fa-close').removeClass('hidden');
+  $navToggleWrapper.on('click', '.nav-toggle', function(e){
+    toggleMenu('open');
   });
-  $('.side-nav').on('click', 'i.fa-close', function(e){
-    $('i.fa-close').addClass('hidden');
-    $('.side-nav').toggleClass('sidenav-open');
-    $('.nav-toggle').toggleClass('hidden');
-    $('.page-content').toggleClass('page-content-blurred');
+  $sideNav.on('click', 'i.fa-close', function(e){
+    toggleMenu('close');
   });
 
-
-  //HANDLES SCROLL TO NAVIGATION
-  $('.side-nav ul').on('click', 'a.scroll-link', function(e){
+  // HANDLES SCROLL TO NAVIGATION
+  $sideNav.on('click', 'a.scroll-link', function(e){
     e.preventDefault();
     var sec = $(this).attr('data-link');
     sec = '.section-' + sec + ' .content-wrapper';
-    $('i.fa-close').addClass('hidden');
-    $('.side-nav').toggleClass('sidenav-open');
-    $('.nav-toggle').toggleClass('hidden');
-    $('.page-content').toggleClass('page-content-blurred');
-    $('html, body').animate({
-      scrollTop: ($(sec).offset().top
-    )}, 800);
+    closeMenu();
+    navigateToSection(sec);
+    return false;
+  });
+
+  // Click on Name in Navigation
+  $sideNav.on('click', 'h1', function(e){
+    closeMenu();
+    navigateToSection('.header')
+  });
+
+  // On click on down arrow
+  $body.on('click', 'i.fa-chevron-down', function(e){
+    e.preventDefault();
+    var sec = $(this).attr('data-link');
+    sec = '.section-' + sec + ' .content-wrapper';
+    navigateToSection(sec);
     return false;
   });
 
 
-  $('body').on('click', 'i.fa-chevron-down', function(e){
-    e.preventDefault();
-    var sec = $(this).attr('data-link');
-    sec = '.section-' + sec + ' .content-wrapper';
-    $('html, body').animate({
-      scrollTop: ($(sec).offset().top
-    )}, 800);
-    return false;
-  });
-
-  $('.side-nav').on('click', 'h1', function(e){
-    $('i.fa-close').addClass('hidden');
-    $('.side-nav').toggleClass('sidenav-open');
-    $('.nav-toggle').toggleClass('hidden');
-    $('.page-content').toggleClass('page-content-blurred');
-    $('html, body').animate({
-      scrollTop: ($('.header').offset().top
-    )}, 800);
-  });
 });
