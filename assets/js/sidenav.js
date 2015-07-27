@@ -34,11 +34,12 @@ $(function(){
       $body = $('body');
 
   // Menu functions
-  function toggleMenu (state) {
+  function toggleMenu () {
     $pageContent.toggleClass('page-content-blurred');
     $sideNav.toggleClass('sidenav-open');
     $menuCloseBtn.toggleClass('hidden')
     $navToggle.toggleClass('hidden');
+    $('html, body').toggleClass('no-scroll');
   }
 
   function navigateToSection (section) {
@@ -72,10 +73,10 @@ $(function(){
 
   //HANDLES NAVIGATION TOGGLING
   $navToggleWrapper.on('click', '.nav-toggle', function(e){
-    toggleMenu('open');
+    toggleMenu();
   });
   $sideNav.on('click', 'i.fa-close', function(e){
-    toggleMenu('close');
+    toggleMenu();
   });
 
   // HANDLES SCROLL TO NAVIGATION
@@ -102,6 +103,5 @@ $(function(){
     navigateToSection(sec);
     return false;
   });
-
 
 });
