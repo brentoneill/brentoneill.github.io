@@ -341,8 +341,7 @@ section {
   transition: all .3s ease-in-out; }
   .headshot:hover {
     filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
-    border-color: transparent; }
+    -webkit-filter: grayscale(0%); }
 
 .section-0,
 .section-1,
@@ -506,15 +505,6 @@ section {
     border-bottom: thin solid transparent; }
     .contact a:hover {
       border-bottom-color: white; }
-
-.magento-logo {
-  display: inline;
-  width: 58px;
-  height: 58px;
-  transition: all .5s ease;
-  cursor: pointer; }
-  .magento-logo:hover {
-    transform: scale(1.2); }
 
 .page-content {
   overflow: hidden; }

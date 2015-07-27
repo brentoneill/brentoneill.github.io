@@ -22,7 +22,6 @@ section{
   &:hover {
     filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
-    border-color: rgba(0,0,0,0);
   }
 }
 
@@ -238,22 +237,9 @@ section{
   }
 }
 
-.magento-logo {
-  display:inline;
-  width:58px;
-  height:58px;
-  transition: all .5s ease;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.2);
-  }
-}
-
 .page-content {
   overflow:hidden;
 }
-
-
 
 [class^="section-"]{
 	margin: 0 -60px;
