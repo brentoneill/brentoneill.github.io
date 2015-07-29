@@ -250,13 +250,19 @@ h3 {
 .side-nav {
   z-index: 100;
   position: fixed;
-  top: -1000px;
-  transition: top .3s ease-in-out;
+  top: 0px;
+  transition: transform .3s ease-out;
   height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   border-right: 0;
-  text-align: center; }
+  text-align: center;
+  transform: translateY(-100vh);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  backface-visibility: hidden;
+  perspective: 1000;
+  will-change: transform; }
   .side-nav h1 {
     cursor: pointer;
     width: 30%;
@@ -309,7 +315,7 @@ h3 {
       color: #45B29D; }
 
 .sidenav-open {
-  top: 0px; }
+  transform: translateY(0vh); }
 
 .hidden {
   display: none; }
